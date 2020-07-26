@@ -5,22 +5,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
-
-
-import { NzMenuModule } from 'ng-zorro-antd/menu/public-api';
-import { NgZorroAntdModuleModule } from './ng-zorro-antd-module/ng-zorro-antd-module.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { IconDefinition } from '@ant-design/icons-angular';
 
+import { AccountBookFill, AlertFill, AlertOutline } from '@ant-design/icons-angular/icons';
+import { NzIconModule } from 'ng-zorro-antd/icon/public-api';
+
+const icons: IconDefinition[] = [ AccountBookFill, AlertOutline, AlertFill ];
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
     BrowserModule,
+    NzIconModule.forRoot(icons),
     AppRoutingModule,
     ReactiveFormsModule,
-    NgZorroAntdModuleModule,
     BrowserAnimationsModule,
     HttpClientModule
   ],
